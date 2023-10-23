@@ -1,6 +1,7 @@
-import { View, Text, StyleSheet } from 'react-native'
-import { Stack, useGlobalSearchParams,useLocalSearchParams } from 'expo-router'
+import { View, Text } from 'react-native'
+import { Stack, useGlobalSearchParams } from 'expo-router'
 import { useQuery, gql} from '@apollo/client';
+import styles from './details.style';
 
 const CountryDetails = () => {
     const { id } = useGlobalSearchParams();
@@ -22,41 +23,6 @@ const CountryDetails = () => {
         }
       }
     `
-    const styles = StyleSheet.create({
-        container: {
-          flex: 1,
-          flexDirection: 'column',
-          alignItems: 'center',
-          justifyContent: 'flex-start',
-          padding: 1,
-        },
-        emojiContainer: {
-          alignItems: 'center',
-          justifyContent: 'center',
-        },
-        emoji: {
-          fontSize: 150,
-        },
-        textContainer: {
-            marginLeft: 20,
-            alignSelf: 'flex-start',
-            flexDirection: 'row',
-        },
-        text: {
-            fontSize: 16,
-            fontWeight: 'bold',
-        },
-        textCountry: {
-          fontSize: 16,
-          marginBottom: 10,
-          color:'gray'
-        },
-        title: {
-            fontWeight:'bold',
-            fontSize:40,
-            marginBottom: 40
-        }
-    });
 
     const {loading, data} = useQuery(GET_COUNTRY);
     if (loading) return <Text>Loading...</Text>;

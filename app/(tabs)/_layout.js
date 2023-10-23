@@ -1,6 +1,5 @@
 import { Tabs } from "expo-router"
 import { Feather } from '@expo/vector-icons';
-import { Ionicons } from '@expo/vector-icons';
 
 export default () => {
     return (
@@ -15,6 +14,7 @@ export default () => {
                 tabBarLabel:'About',
                 tabBarIcon: (color) => (<Feather name="book-open" size={24} color={color} />)
             }}/>
+            
         </Tabs>
     )
 }

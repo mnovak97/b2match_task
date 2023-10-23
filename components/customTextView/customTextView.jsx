@@ -1,6 +1,7 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text } from 'react-native';
 import { Feather } from '@expo/vector-icons';
+import styles from './customTextView.style';
 
 const CustomComponent = ({ imageName, text }) => {
   return (
@@ -14,26 +15,5 @@ const CustomComponent = ({ imageName, text }) => {
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    padding:30
-  },
-  roundedContainer: {
-    borderRadius: 25,
-    backgroundColor: 'white',
-    height: 50,
-    width: 250,
-    alignItems: 'center'
-  },
-  contentContainer: {
-    flex: 1,
-    flexDirection: 'row',
-    alignItems: 'center',
-  },
-  text: {
-    marginLeft: 10,
-  },
-});
 
 export default CustomComponent;
