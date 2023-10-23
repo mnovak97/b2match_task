@@ -13,7 +13,7 @@ const GET_COUNTRIES = gql `
             capital
             emoji
             currency
-        }
+        } 
     }
 `
 function DisplayCountries() {
@@ -22,8 +22,8 @@ function DisplayCountries() {
     if (loading) return <Text>Loading...</Text>;
     if (error) return <Text>Error : {error.message}</Text>;
     return data.countries.map((country) => (
-    <TouchableOpacity onPress={() => router.push({ pathname: `/country/${country.code}`})}>
-        <View key={country.code} style={styles.card}>
+    <TouchableOpacity key={country.code} onPress={() => router.push({ pathname: `/country/${country.code}`})}>
+        <View style={styles.card}>
             <View style={styles.leftContent}>
                 <Text style={styles.emoji}>{country.emoji}</Text>
             </View>
